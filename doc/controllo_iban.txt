@@ -1,0 +1,86 @@
+#####################################################################
+# da http://alexandrerodichevski.chiappani.it/doc.php?n=219&lang=it
+#####################################################################
+
+
+Algoritmo di controllo dell'IBAN
+
+   1.
+
+      L'IBAN deve essere una stringa costituita di almeno 5 caratteri.
+   2.
+
+      Deve contenere solo lettere maiuscole dell'alfabeto latino da "A" a "Z" e cifre da "0" a "9". Inoltre, le posizioni 0 e 1 possono essere occupate esclusivamente da una sigla valida ISO del paese, mentre le posizioni 2 e 3 da un numero.
+   3.
+
+      I primi quattro caratteri della stringa originale vengono scambiati con il resto.
+   4.
+
+      Ogni carattere è convertito in un codice da 0 a 35 secondo la seguente regola. La cifra è trasformata nel numero corrispondente, ad esempio "7" in 7. La lettera "A" si converte in 10, "B" in 11, ecc., "Z" si converte in 35. Dai numeri così ottenuti viene composta una nuova stringa numerica.
+   5.
+
+      La stringa numerica viene interpretata ora come un numero. Dividendolo per 97, si dovrebbe ottenere come resto 1. Per facilitare la divisione dei numeri eccessivamente lunghi, è possibile spezzare la stringa numerica in parti più piccole e calcolare il resto della divisione della prima parte per 97, poi comporre nuova stringa numerica dal resto della divisione e dal secondo pezzo e dividere questo numero per 97, etc.
+
+Esempi di controllo dell'IBAN
+Esempio 1
+
+Prendiamo in esame la stringa "IT60Q0123412345000000753XYZ". Si seguano i passi dell'algoritmo:
+
+   1.
+
+      È una stringa di 27 caratteri.
+   2.
+
+      Contiene solo lettere maiuscole e cifre. Le posizioni 0 e 1 sono occupate dalle lettere "IT", mentre le posizioni 2 e 3 sono costituite dal numero "60".
+   3.
+
+      Scambiando i primi quattro caratteri con il resto, si ottiene "Q0123412345000000753XYZIT60".
+   4.
+
+      Convertendo nella stringa numerica, a "Q" corrisponde "26", a "0" corrisponde "0", a "1" corrisponde "1", ecc. Il risultato finale è "260123412345000000753333435182960".
+   5.
+
+      Spezziamo la stringa numerica in cinque parti da almeno otto caratteri: "26012341", "23450000", "00753333", "43518296" e "0". Il resto della divisione di 26012341 per 97 è 45. Il resto della divisione di 4523450000 per 97 è 15. Il resto della divisione di 1500753333 per 97 è 82. Il resto della divisione di 8243518296 per 97 è 68. Il resto della divisione di 680 per 97 è 1.
+
+Quindi il resto della divisione è 1. Questo codice IBAN è corretto.
+Esempio 2
+
+Analizziamo ora "IT60 Q012 3412 3450 0000 0753 XYZ". Questa stringa contiene alcuni spazi (avendo il formato di stampa), quindi l'IBAN è errato.
+Esempio 3
+
+La stringa "IT60Q012341234500000753/XYZ" contiene un carattere speciale "/", quindi l'IBAN è errato.
+Esempio 4
+
+Consideriamo la stringa "IT63Q0123412345000000753XYZ". Questo esempio è identico al primo, ad eccezione del numero di controllo "63". La stringa numerica è "260123412345000000753333435182963". Il resto della divisione di questo numero per 97 è 4. Quindi l'IBAN è errato.
+Programma per controllare l'IBAN
+
+
+
+function IBANChk(b) 
+{ 
+        if (b.length < 5) { alert("La lunghezza è minore di 5 caratteri"); return false; } 
+        s = b.substring(4) + b.substring(0, 4); 
+        for (i = 0, r = 0; i < s.length; i++ ) 
+        { 
+                c = s.charCodeAt(i); 
+                if (48 <= c && c <= 57) 
+                { 
+                        if (i == s.length-4 || i == s.length-3) { alert("Posizioni 1 e 2 non possono contenere cifre"); return false; } 
+                        k = c - 48; 
+                } 
+                else if (65 <= c && c <= 90) 
+                { 
+                        if (i == s.length-2 || i == s.length-1) { alert("Posizioni 3 e 4 non possono contenere lettere"); return false; } 
+                        k = c - 55; 
+                } 
+                else { alert("Sono ammesse solo cifre e lettere maiuscole"); return false; } 
+                if (k > 9) 
+                        r = (100 * r + k) % 97; 
+                else 
+                        r = (10 * r + k) % 97; 
+        } 
+        if (r != 1) { alert("Il codice di controllo è errato"); return false; } 
+        alert("L'IBAN risulta corretto"); 
+        return true; 
+} 
+
