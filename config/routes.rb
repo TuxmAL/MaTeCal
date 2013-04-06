@@ -1,4 +1,11 @@
 MaTeCal::Application.routes.draw do
+  resources :zone
+
+
+  resources :modelli
+
+  resources :unita
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

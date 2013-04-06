@@ -1,0 +1,22 @@
+<%= form_for(@zona) do |f| %>
+  <% if @zona.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@zona.errors.count, "error") %> non ha permesso di salvare questa zona:</h2>
+
+      <ul>
+      <% @zona.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descrizione, "Descrizione:" %>
+    <%= f.text_field :descrizione, :size => 50, :maxlenght => 35, :alt => "Inserisci una descrizione per la zona",
+                     :placeholder => "Campania, Salerno, Centro-Sud, etc." %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

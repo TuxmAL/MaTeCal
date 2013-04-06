@@ -1,0 +1,21 @@
+<%= form_for(@unita) do |f| %>
+  <% if @unita.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@unita.errors.count, "error") %> non ha permesso di salvare questa unità di misura:</h2>
+
+      <ul>
+      <% @unita.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :unita, 'Unità di misura:'  %>
+  <%= f.text_field :unita, :size => 10, :maxlenght => 5, :alt => "Inserisci l'unità di misura",
+                   :placeholder => "Kg, Pz, etc." %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
