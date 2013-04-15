@@ -44,7 +44,7 @@ class ModelliController < ApplicationController
 
     respond_to do |format|
       if @modello.save
-        format.html { redirect_to @modello, notice: 'Modello was successfully created.' }
+        format.html { redirect_to @modello, notice: 'Modello creato con successo.' }
         format.json { render json: @modello, status: :created, location: @modello }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class ModelliController < ApplicationController
 
     respond_to do |format|
       if @modello.update_attributes(params[:modello])
-        format.html { redirect_to @modello, notice: 'Modello was successfully updated.' }
+        format.html { redirect_to @modello, notice: 'Modello aggiornato con successo.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
