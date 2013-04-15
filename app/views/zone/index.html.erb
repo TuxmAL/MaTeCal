@@ -11,9 +11,9 @@
 <% @zone.each do |zona| %>
   <tr>
     <td><%= zona.descrizione %></td>
-    <td><%= link_to 'Show', zona %></td>
-    <td><%= link_to 'Edit', edit_zona_path(zona) %></td>
-    <td><%= link_to 'Destroy', zona, method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
+    <td><%= link_to 'Mostra', zona %></td>
+    <td><%= link_to 'Modifica', edit_zona_path(zona) %></td>
+    <td><%= link_to 'Elimina', zona, method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
   </tr>
 <% end %>
 </table>

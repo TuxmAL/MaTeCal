@@ -44,7 +44,7 @@ class ZoneController < ApplicationController
 
     respond_to do |format|
       if @zona.save
-        format.html { redirect_to @zona, notice: 'Zona was successfully created.' }
+        format.html { redirect_to @zona, notice: 'Zona creata con successo.' }
         format.json { render json: @zona, status: :created, location: @zona }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class ZoneController < ApplicationController
 
     respond_to do |format|
       if @zona.update_attributes(params[:zona])
-        format.html { redirect_to @zona, notice: 'Zona was successfully updated.' }
+        format.html { redirect_to @zona, notice: 'Zona aggiornata con successo.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
