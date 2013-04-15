@@ -1,4 +1,7 @@
 MaTeCal::Application.routes.draw do
+  resources :campagne
+
+
   resources :zone
 
 

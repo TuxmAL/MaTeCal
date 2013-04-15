@@ -1,0 +1,21 @@
+<%= form_for(@campagna) do |f| %>
+  <% if @campagna.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campagna.errors.count, "error") %> non ha permesso di salvare questa campagna:</h2>
+
+      <ul>
+      <% @campagna.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descrizione %><br />
+    <%= f.text_field :descrizione %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

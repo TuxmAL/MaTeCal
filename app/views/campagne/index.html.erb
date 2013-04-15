@@ -1,0 +1,23 @@
+<h1>Elenco delle campagne</h1>
+
+<table>
+  <tr>
+    <th>Descrizione</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @campagne.each do |campagna| %>
+  <tr>
+    <td><%= campagna.descrizione %></td>
+    <td><%= link_to 'Mostra', campagna %></td>
+    <td><%= link_to 'Modifica', edit_campagna_path(campagna) %></td>
+    <td><%= link_to 'Elimina', campagna, method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuova Campagna', new_campagna_path %>

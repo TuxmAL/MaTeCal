@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descrizione:</b>
+  <%= @campagna.descrizione %>
+</p>
+
+
+<%= link_to 'Modifica', edit_campagna_path(@campagna) %> |
+<%= link_to 'Indietro', campagne_path %>
