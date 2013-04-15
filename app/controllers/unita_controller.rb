@@ -44,7 +44,7 @@ class UnitaController < ApplicationController
 
     respond_to do |format|
       if @unita.save
-        format.html { redirect_to @unita, notice: 'Unita was successfully created.' }
+        format.html { redirect_to @unita, notice: 'Unità creata con successo.' }
         format.json { render json: @unita, status: :created, location: @unita }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class UnitaController < ApplicationController
 
     respond_to do |format|
       if @unita.update_attributes(params[:unita])
-        format.html { redirect_to @unita, notice: 'Unita was successfully updated.' }
+        format.html { redirect_to @unita, notice: 'Unità aggiornata con successo.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
