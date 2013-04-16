@@ -1,0 +1,46 @@
+<%= form_for(@mod_pag) do |f| %>
+  <% if @mod_pag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mod_pag.errors.count, "error") %> prohibited this mod_pag from being saved:</h2>
+
+      <ul>
+      <% @mod_pag.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descrizione %><br />
+    <%= f.text_field :descrizione %>
+  </div>
+  <div class="field">
+    <%= f.label :dilazione_iniziale %><br />
+    <%= f.text_field :dilazione_iniziale %>
+  </div>
+  <div class="field">
+    <%= f.label :num_rate %><br />
+    <%= f.text_field :num_rate %>
+  </div>
+    <div class="field">
+      <%= f.label :scadenza %><br />
+      <%= f.text_field :scadenza %>
+    </div>
+    <div class="field">
+      <%= f.label :sconto %><br />
+      <%= f.text_field :sconto %>
+    </div>
+    <div class="field">
+      <%= f.label :tipo_pagamento %><br />
+      <%= f.text_field :tipo_pagamento %>
+    </div>
+    <div class="field">
+      <%= f.label :piu_sconto %><br />
+      <%= f.text_field :piu_sconto %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

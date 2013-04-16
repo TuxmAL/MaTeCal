@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descrizione:</b>
+  <%= @mod_pag.descrizione %>
+</p>
+
+<p>
+  <b>Dilazione iniziale:</b>
+  <%= @mod_pag.dilazione_iniziale %>
+</p>
+
+<p>
+  <b>Dilazione iniziale:</b>
+  <%= @mod_pag.dilazione_iniziale %>
+</p>
+
+<p>
+  <b>Num. rate:</b>
+  <%= @mod_pag.num_rate %>
+</p>
+
+<p>
+  <b>Scadenza:</b>
+  <%= @mod_pag.scadenza %>
+</p>
+
+<p>
+  <b>Sconto:</b>
+  <%= @mod_pag.sconto %>
+</p>
+
+<p>
+  <b>Tipo pagamento:</b>
+  <%= @mod_pag.tipo_pagamento %>
+</p>
+
+<p>
+  <b>Sconto ulteriore:</b>
+  <%= @mod_pag.piu_sconto %>
+</p>
+
+
+<%= link_to 'Modifica', edit_mod_pag_path(@mod_pag) %> |
+<%= link_to 'Indietro', mod_pags_path %>

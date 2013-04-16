@@ -12,6 +12,8 @@
    inflect.plural /^(.*)a$/i, '\1e'
    inflect.singular /^(.*)e$/i, '\1a'
    inflect.irregular 'causale', 'causali'
+   inflect.irregular 'mod_pag', 'mod_pags'
+
    inflect.uncountable %w( unita )
  end
 #
