@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descrizione:</b>
+  <%= @causale.causale %>
+</p>
+
+
+<%= link_to 'Modifica', edit_causale_path(@causale) %> |
+<%= link_to 'Indietro', causali_path %>

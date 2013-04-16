@@ -1,0 +1,23 @@
+<h1>Elenca le causali</h1>
+
+<table>
+  <tr>
+    <th>Descrizione</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @causali.each do |causale| %>
+  <tr>
+    <td><%= causale.causale %></td>
+    <td><%= link_to 'Mostra', causale %></td>
+    <td><%= link_to 'Modifica', edit_causale_path(causale) %></td>
+    <td><%= link_to 'Elimina', causale, method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuova Causale', new_causale_path %>

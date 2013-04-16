@@ -1,0 +1,22 @@
+<%= form_for(@causale) do |f| %>
+  <% if @causale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@causale.errors.count, "error") %> non ha permesso di salvare questa causale:</h2>
+
+      <ul>
+      <% @causale.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :causale %><br />
+    <%= f.text_field :causale, :size => 50, :maxlenght => 35, :alt => "Inserisci una descrizione per la causale",
+                     :placeholder => "vendita, omaggio, reso, etc." %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
