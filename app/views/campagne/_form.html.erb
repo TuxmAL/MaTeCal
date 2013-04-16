@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= f.label :descrizione %><br />
-    <%= f.text_field :descrizione %>
+    <%= f.text_field :descrizione, :size => 50, :maxlenght => 35, :alt => "Inserisci una descrizione per la campagna",
+                     :placeholder => "primavera/estate, mare, pigiameria, etc." %>
   </div>
   <div class="actions">
     <%= f.submit %>
