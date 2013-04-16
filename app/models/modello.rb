@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Modello < ActiveRecord::Base
   attr_accessible :descrizione
 

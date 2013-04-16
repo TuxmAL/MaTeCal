@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ZoneController < ApplicationController
   # GET /zone
   # GET /zone.json

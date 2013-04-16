@@ -1,9 +1,8 @@
+# encoding: utf-8
 MaTeCal::Application.routes.draw do
   resources :campagne
 
-
   resources :zone
-
 
   resources :modelli
 

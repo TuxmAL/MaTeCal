@@ -1,3 +1,4 @@
+# encoding: utf-8
 class UnitaController < ApplicationController
   # GET /unita
   # GET /unita.json

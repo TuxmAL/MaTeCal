@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CampagneController < ApplicationController
   # GET /campagne
   # GET /campagne.json

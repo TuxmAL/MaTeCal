@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Campagna < ActiveRecord::Base
   attr_accessible :descrizione
 

@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ModelliController < ApplicationController
   # GET /modelli
   # GET /modelli.json
