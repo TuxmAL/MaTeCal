@@ -13,31 +13,39 @@
 
   <div class="field">
     <%= f.label :descrizione %><br />
-    <%= f.text_field :descrizione %>
+    <%= f.text_field :descrizione, :size => 50, :maxlenght => 35,
+                     :alt => 'Inserisci una descrizione per la modalità di pagamento',
+                     :placeholder => 'Ri.Ba. 30 gg, Rimessa diretta, Contrassegno, etc.' %>
   </div>
   <div class="field">
     <%= f.label :dilazione_iniziale %><br />
-    <%= f.text_field :dilazione_iniziale %>
+    <%= f.number_field :dilazione_iniziale, :in => 0..999, :size => 5, :maxlenght => 3,
+                       :alt => 'Inserisci il numero di giorni di dilazione iniziale', :placeholder => '0' %>
   </div>
   <div class="field">
     <%= f.label :num_rate %><br />
-    <%= f.text_field :num_rate %>
+    <%= f.number_field :num_rate, :in => 0..99, :size => 3, :maxlenght => 2, :alt => 'Inserisci il numero di rate',
+        :placeholder => '0' %>
   </div>
     <div class="field">
       <%= f.label :scadenza %><br />
-      <%= f.text_field :scadenza %>
+      <%= f.radio_button :scadenza, 'I', :checked => true %> Immediata
+      <%= f.radio_button :scadenza, 'F' %> Fine mese
     </div>
     <div class="field">
       <%= f.label :sconto %><br />
-      <%= f.text_field :sconto %>
+      <%= f.number_field :sconto, :in => 0..99, :size => 3, :maxlenght => 2, :alt => 'Inserisci lo sconto',
+                         :placeholder => '0' %>
     </div>
     <div class="field">
       <%= f.label :tipo_pagamento %><br />
-      <%= f.text_field :tipo_pagamento %>
+      <%= f.radio_button :tipo_pagamento, 'D', :checked => true %> Rimessa diretta
+      <%= f.radio_button :tipo_pagamento, 'B' %> Ricevuta bancaria
     </div>
     <div class="field">
-      <%= f.label :piu_sconto %><br />
-      <%= f.text_field :piu_sconto %>
+      <%= f.label :piu_sconto, "Sconto ulteriore" %><br />
+      <%= f.number_field :piu_sconto, :in => 0..99, :size => 3, :maxlenght => 2,
+                         :alt => 'Inserisci lo sconto ulteriore', :placeholder => '0' %>
     </div>
 
     <div class="actions">

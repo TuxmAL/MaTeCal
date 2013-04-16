@@ -45,7 +45,7 @@ class ModPagsController < ApplicationController
 
     respond_to do |format|
       if @mod_pag.save
-        format.html { redirect_to @mod_pag, notice: 'Modalità di pagamento create con successo.' }
+        format.html { redirect_to @mod_pag, notice: 'Modalità di pagamento creata con successo.' }
         format.json { render json: @mod_pag, status: :created, location: @mod_pag }
       else
         format.html { render action: "new" }
