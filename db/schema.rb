@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(:version => 20101110201209) do
   add_index "campagne", ["id"], :name => "campagna", :unique => true
 
   create_table "causali", :force => true do |t|
-    t.string   "causale",    :limit => 25, :null => false
+    t.string   "causale",    :limit => 35, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
