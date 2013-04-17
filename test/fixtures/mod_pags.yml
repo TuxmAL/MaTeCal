@@ -1,9 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  descrizione: MyString
-  dilazione_iniziale: 
+  descrizione: Contanti
+  dilazione_iniziale: 0
+  num_rate: 0
+  scadenza: I
+  sconto: 10
+  tipo_pagamento: D
+  piu_sconto: 10
 
 two:
-  descrizione: MyString
-  dilazione_iniziale: 
+  descrizione: RiBA
+  dilazione_iniziale: 30
+  num_rate: 2
+  scadenza: F
+  sconto: 0
+  tipo_pagamento: B
+  piu_sconto: 0
