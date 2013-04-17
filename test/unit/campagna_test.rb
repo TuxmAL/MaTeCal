@@ -3,26 +3,26 @@ require 'test_helper'
 
 class CampagnaTest < ActiveSupport::TestCase
 
+  def setup 
+    @campagna = Campagna.new
+  end
+
   test "campagna deve avere la descrizione" do
-     campagna = Campagna.new
-     assert !campagna.save
+     assert !@campagna.save
    end
 
   test "la descrizione non puo essere vuota" do
-    campagna = Campagna.new
-    campagna.descrizione=''
-    assert !campagna.save
+    @campagna.descrizione = ''
+    assert !@campagna.save
   end
   test "la descrizione non puo essere piu di 35 car" do
-    campagna = Campagna.new
-    campagna.descrizione='descrizione più lunga di trentacinque caratteri per cui non è valida affatto'
-    assert !campagna.save
+    @campagna.descrizione = 'descrizione più lunga di trentacinque caratteri per cui non è valida affatto'
+    assert !@campagna.save
   end
 
   test "la descrizione non puo essere duplicata" do
-    campagna = Campagna.new
-    campagna.descrizione='Primavera-Estate 2013'
-    assert !campagna.save
+    @campagna.descrizione = 'Primavera-Estate 2013'
+    assert !@campagna.save
   end
 
 end
