@@ -12,7 +12,7 @@ class ModPag < ActiveRecord::Base
   validates_numericality_of :piu_sconto, :only_integer => true, :greater_than_or_equal_to => 0, :less_than => 100
 
   def tipo_pagamento_esteso
-    case tipo_pagamento
+    case tipo_pagamento.upcase
       when 'D'
         'Rimessa diretta'
       when 'B'
@@ -23,7 +23,7 @@ class ModPag < ActiveRecord::Base
   end
 
   def scadenza_estesa
-    case scadenza
+    case scadenza.upcase
       when 'I'
         'Immediata'
       when 'F'
