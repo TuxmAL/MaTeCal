@@ -1,15 +1,17 @@
-# This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of Active Record to incrementally modify your database, and
-# then regenerate this schema definition.
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your database schema. If you need
-# to create the application database on another system, you should be using db:schema:load, not running
-# all the migrations from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101110201209) do
+ActiveRecord::Schema.define(:version => 0) do
 
   create_table "agenti", :force => true do |t|
     t.string   "cognome",     :limit => 30,                :null => false
@@ -18,19 +20,19 @@ ActiveRecord::Schema.define(:version => 20101110201209) do
     t.string   "citta",       :limit => 50,                :null => false
     t.string   "provincia",   :limit => 2,                 :null => false
     t.string   "cap",         :limit => 5,                 :null => false
-    t.integer  "zona_id",                                  :null => false
     t.string   "telefono1",   :limit => 15
     t.string   "telefono2",   :limit => 15
     t.string   "telefono3",   :limit => 15
     t.string   "fax",         :limit => 30
     t.string   "codfis_piva", :limit => 15,                :null => false
     t.integer  "provvigione",               :default => 0, :null => false
+    t.integer  "zona_id",                                  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "agenti", ["cognome", "nome"], :name => "cognome_nome"
-  add_index "agenti", ["id"], :name => "primarykey", :unique => true
+  add_index "agenti", ["zona_id"], :name => "fk_agenti_zone1_idx"
 
   create_table "bolle", :force => true do |t|
     t.integer  "numero",                         :null => false
@@ -94,21 +96,22 @@ ActiveRecord::Schema.define(:version => 20101110201209) do
     t.datetime "updated_at"
   end
 
-  add_index "clienti", ["id"], :name => "PrimaryKey", :unique => true
+  add_index "clienti", ["mod_pag_id"], :name => "fk_clienti_mod_pags_idx"
   add_index "clienti", ["ragione_sociale"], :name => "RagioneSociale"
+  add_index "clienti", ["zona_id"], :name => "fk_clienti_zone1_idx"
 
   create_table "destinazioni", :force => true do |t|
-    t.integer  "clienti_id"
-    t.integer  "destinazioni_id"
-    t.string   "via",             :limit => 40, :null => false
-    t.string   "citta",           :limit => 50, :null => false
-    t.string   "provincia",       :limit => 2,  :null => false
-    t.string   "cap",             :limit => 5,  :null => false
+    t.integer  "cliente_id",               :null => false
+    t.string   "via",        :limit => 40, :null => false
+    t.string   "citta",      :limit => 50, :null => false
+    t.string   "provincia",  :limit => 2,  :null => false
+    t.string   "cap",        :limit => 5,  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "destinazioni", ["clienti_id", "destinazioni_id"], :name => "primarykey", :unique => true
+  add_index "destinazioni", ["cliente_id"], :name => "fk_destinazioni_clienti1_idx"
+  add_index "destinazioni", ["id"], :name => "primarykey", :unique => true
 
   create_table "dettagli_bolle", :force => true do |t|
     t.integer  "bolle_id",                                         :null => false
@@ -222,7 +225,6 @@ ActiveRecord::Schema.define(:version => 20101110201209) do
   end
 
   add_index "mod_pags", ["descrizione"], :name => "mod_pag_descr", :unique => true
-  add_index "mod_pags", ["id"], :name => "PrimaryKey", :unique => true
 
   create_table "modelli", :force => true do |t|
     t.string   "descrizione", :limit => 35, :null => false
@@ -254,21 +256,24 @@ ActiveRecord::Schema.define(:version => 20101110201209) do
   add_index "ordini", ["id"], :name => "PrimaryKey", :unique => true
 
   create_table "prodotti", :force => true do |t|
-    t.integer  "codice",                                                          :default => 0,  :null => false
-    t.string   "descrizione",       :limit => 50,                                 :default => "", :null => false
     t.integer  "modello_id",                                                                      :null => false
-    t.string   "composizione",      :limit => 100,                                                :null => false
-    t.integer  "prezzo_unitario",   :limit => 10,  :precision => 10, :scale => 0
-    t.integer  "IVA",                                                             :default => 0,  :null => false
-    t.integer  "campagna_id",                                                                     :null => false
-    t.decimal  "prezzo_conformato",                :precision => 8,  :scale => 2,                 :null => false
-    t.integer  "unita_id"
+    t.integer  "codice",                                                         :default => 0,   :null => false
+    t.string   "descrizione",       :limit => 50,                                                 :null => false
+    t.string   "composizione",      :limit => 100,                               :default => ""
+    t.decimal  "prezzo_unitario",                  :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.integer  "iva",               :limit => 1,                                 :default => 0,   :null => false
+    t.decimal  "prezzo_conformato",                :precision => 8, :scale => 2
+    t.integer  "unita_id",                                                                        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "campagna_id",                                                                     :null => false
   end
 
+  add_index "prodotti", ["campagna_id"], :name => "fk_prodotti_campagne1_idx"
   add_index "prodotti", ["codice"], :name => "Codice Prodotto", :unique => true
-  add_index "prodotti", ["id"], :name => "PrimaryKey", :unique => true
+  add_index "prodotti", ["descrizione"], :name => "descrizione_UNIQUE", :unique => true
+  add_index "prodotti", ["modello_id"], :name => "fk_prodotti_modelli1_idx"
+  add_index "prodotti", ["unita_id"], :name => "fk_prodotti_unita1_idx"
 
   create_table "subdettagli_bolle", :force => true do |t|
     t.integer  "dettagli_bolle_id",                                 :null => false
@@ -309,7 +314,6 @@ ActiveRecord::Schema.define(:version => 20101110201209) do
     t.string "unita", :limit => 5
   end
 
-  add_index "unita", ["id"], :name => "PrimaryKey", :unique => true
   add_index "unita", ["unita"], :name => "Unita", :unique => true
 
   create_table "utenti", :force => true do |t|
@@ -335,13 +339,11 @@ ActiveRecord::Schema.define(:version => 20101110201209) do
   end
 
   add_index "vettori", ["descrizione"], :name => "Vettore", :unique => true
-  add_index "vettori", ["id"], :name => "PrimaryKey", :unique => true
 
   create_table "zone", :force => true do |t|
     t.string "descrizione", :limit => 35, :null => false
   end
 
   add_index "zone", ["descrizione"], :name => "Zonadescr", :unique => true
-  add_index "zone", ["id"], :name => "PrimaryKey", :unique => true
 
 end
