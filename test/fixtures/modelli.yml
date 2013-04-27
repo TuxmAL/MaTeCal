@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+lup:
   descrizione: Lupetto
 
-two:
+scam:
   descrizione: Scamiciato
+
+teso:
+  descrizione: Prodotti per il mare
