@@ -1,5 +1,7 @@
 # encoding: utf-8
 MaTeCal::Application.routes.draw do
+  resources :prodotti
+
   resources :mod_pags
 
   resources :causali

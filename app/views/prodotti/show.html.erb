@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Codice:</b>
+  <%= @prodotto.codice %>
+</p>
+
+<p>
+  <b>Descrizione:</b>
+  <%= @prodotto.descrizione %>
+</p>
+
+<p>
+  <b>Composizione:</b>
+  <%= @prodotto.composizione %>
+</p>
+
+<p>
+  <b>Prezzo unitario:</b>
+  <%= @prodotto.prezzo_unitario %>
+</p>
+
+<p>
+  <b>Iva:</b>
+  <%= @prodotto.iva %>
+</p>
+
+<p>
+  <b>Prezzo conformato:</b>
+  <%= @prodotto.prezzo_conformato %>
+</p>
+
+
+<%= link_to 'Edit', edit_prodotto_path(@prodotto) %> |
+<%= link_to 'Back', prodotti_path %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+orsetto:
+  codice: 1001
+  descrizione: Orsetto
+  composizione: pelo 100% lycra
+  prezzo_unitario: 15.39
+  iva: 20
+  prezzo_conformato: 16.49
+  campagna: prim_est
+  modello: lup
+  unita: pz
+
+telo:
+  codice: 2003
+  descrizione: Telo
+  composizione: Cotone 100%
+  prezzo_unitario: 14.20
+  iva: 21
+  prezzo_conformato: 15.50
+  campagna: mare
+  modello: teso
+  unita: pz
