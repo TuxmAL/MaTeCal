@@ -11,6 +11,11 @@
  *= require_self
  *= require_tree .
  */
+body, html {
+    margin:0;
+    padding:0;
+    color:#000;
+}
 .intestazione {
     background-color: mediumblue;
     color: whitesmoke;
@@ -26,4 +31,23 @@
 div.intestazione h1 {
     font-size: 55px;
     color: yellow;
+}
+div.menu {
+    float: left;
+    width: 20%;
+    min-width: 10%;
+    height: 400px;
+}
+div.content {
+    margin-left: 20%;
+    padding: 0px;
+    margin-right: 5px;
+}
+div.piedipagina{
+    clear: left;
+    width: 100%;
+    background: mediumblue;
+    color: whitesmoke;
+    text-align: center;
+    padding: 4px 0;
 }

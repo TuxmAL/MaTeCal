@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
   <title>MaTeCal</title>
@@ -7,10 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="intestazione">
-  <h1>MaTeCal</h1>
-</div>
-<%= yield %>
+    <div class="intestazione">
+      <h1>MaTeCal</h1>
+    </div>
+    <div class="menu"><%= render_navigation %></div>
+    <div class="content">
+    <%= yield %>
+    </div>
+    <div class="piedipagina">
+      &copy; TuxmAL mail me at tiscali&dot;it
+    </div>
 
 </body>
 </html>
