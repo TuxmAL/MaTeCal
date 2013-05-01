@@ -21,7 +21,6 @@ body, html {
     color: whitesmoke;
     background-image: url(<%= asset_path 'mate.png' %>);
     background-repeat:no-repeat;
-    background-origin: margin-box;
     background-position: left center;
     height: 100px;
     border: 4px mediumblue solid;
@@ -43,11 +42,42 @@ div.content {
     padding: 0px;
     margin-right: 5px;
 }
-div.piedipagina{
+div.piedipagina {
     clear: left;
     width: 100%;
     background: mediumblue;
     color: whitesmoke;
     text-align: center;
     padding: 4px 0;
+}
+ .menu ul {
+    padding-left: 5px;
+ }
+.menu ul ul {
+    padding-left: 20px;
+}
+.menu a {
+    text-decoration: none;
+    color: #7f7669;
+}
+.menu a:hover {
+    text-decoration: underline;
+    color:red;
+    background-color: transparent;
+}
+.menu a:active {
+    text-decoration: underline;
+}
+.menu li {
+    border: medium none;
+    list-style-image: none;
+    list-style-type: none;
+    padding: 2px;
+}
+.menu li a.selected {
+    color: mediumblue;
+    text-decoration: underline;
+}
+.menu li li {
+    font-size: 10pt;
 }

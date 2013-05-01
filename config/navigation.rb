@@ -28,7 +28,7 @@ SimpleNavigation::Configuration.run do |navigation|
 
   # The auto highlight feature is turned on by default.
   # This turns it off globally (for the whole plugin)
-  # navigation.auto_highlight = false
+  #navigation.auto_highlight = false
 
   # Define the primary navigation
   navigation.items do |primary|
@@ -54,10 +54,12 @@ SimpleNavigation::Configuration.run do |navigation|
     # Add an item which has a sub navigation (same params, but with block)
     primary.item :anag, 'Anagrafiche', :expand_all => true do |sub_nav|
       # Add an item to the sub navigation (same params again)
-      sub_nav.item :campagna, 'Campagne', campagne_path
-      sub_nav.item :causale, 'Causali', causali_path
-      sub_nav.item :modello, 'Modelli', modelli_path
-      sub_nav.item :mod_pag, 'Modalità di pagamento', mod_pags_path
+      sub_nav.item :campagna, 'Campagne', campagne_path, :highlights_on => :subpath
+      sub_nav.item :causale, 'Causali', causali_path, :highlights_on => :subpath
+      sub_nav.item :mod_pag, 'Modalità di pagamento', mod_pags_path, :highlights_on => :subpath
+      sub_nav.item :modello, 'Modelli', modelli_path, :highlights_on => :subpath
+      sub_nav.item :prodotto, 'Prodotti', prodotti_path, :highlights_on => :subpath
+      sub_nav.item :unita, 'Unità', unita_index_path, :highlights_on => :subpath
     end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
