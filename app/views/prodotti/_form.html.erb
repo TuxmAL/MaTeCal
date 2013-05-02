@@ -12,12 +12,20 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :campagna %><br />
+    <%= f.select('campagna_id', Campagna.all.collect {|p| [ p.descrizione, p.id ] }, { :selected => nil }) %>
+  </div>
+  <div class="field">
     <%= f.label :codice %><br />
     <%= f.number_field :codice %>
   </div>
   <div class="field">
     <%= f.label :descrizione %><br />
     <%= f.text_field :descrizione %>
+  </div>
+  <div class="field">
+    <%= f.label :modello %><br />
+    <%= f.select('modello_id', Modello.all.collect {|p| [ p.descrizione, p.id ] }, { :selected => nil }) %>
   </div>
   <div class="field">
     <%= f.label :composizione %><br />
@@ -28,12 +36,16 @@
     <%= f.text_field :prezzo_unitario %>
   </div>
   <div class="field">
+    <%= f.label :prezzo_conformato %><br />
+    <%= f.text_field :prezzo_conformato %>
+  </div>
+  <div class="field">
     <%= f.label :iva %><br />
     <%= f.number_field :iva %>
   </div>
   <div class="field">
-    <%= f.label :prezzo_conformato %><br />
-    <%= f.text_field :prezzo_conformato %>
+    <%= f.label :unita, 'Unità di misura:' %><br />
+    <%= f.select('unita_id', Unita.all.collect {|p| [ p.unita, p.id ] }, { :selected => nil }) %>
   </div>
   <div class="actions">
     <%= f.submit %>

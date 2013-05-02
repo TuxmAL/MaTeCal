@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Campagna:</b>
+  <%= @prodotto.campagna.descrizione %>
+</p>
+
+<p>
   <b>Codice:</b>
   <%= @prodotto.codice %>
 </p>
@@ -8,6 +13,11 @@
 <p>
   <b>Descrizione:</b>
   <%= @prodotto.descrizione %>
+</p>
+
+<p>
+  <b>Modello:</b>
+  <%= @prodotto.modello.descrizione %>
 </p>
 
 <p>
@@ -21,15 +31,20 @@
 </p>
 
 <p>
+  <b>Prezzo conformato:</b>
+  <%= @prodotto.prezzo_conformato %>
+</p>
+
+<p>
   <b>Iva:</b>
   <%= @prodotto.iva %>
 </p>
 
 <p>
-  <b>Prezzo conformato:</b>
-  <%= @prodotto.prezzo_conformato %>
+  <b>Unit&agrave; di misura:</b>
+  <%= @prodotto.unita.unita %>
 </p>
 
 
-<%= link_to 'Edit', edit_prodotto_path(@prodotto) %> |
-<%= link_to 'Back', prodotti_path %>
+<%= link_to 'Modifica', edit_prodotto_path(@prodotto) %> |
+<%= link_to 'Indietro', prodotti_path %>

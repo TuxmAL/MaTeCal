@@ -8,7 +8,6 @@ class ProdottoTest < ActiveSupport::TestCase
     @mare = campagne(:mare)
     @pz = unita(:pz)
     @lup = modelli(:lup)
-
   end
 
   test "prodotto non puo essere vuoto" do
@@ -68,5 +67,19 @@ class ProdottoTest < ActiveSupport::TestCase
     assert !pr.save
   end
 
+  test "non puo mancare la campagna" do
+    @prodotto.campagna = nil
+    assert !@prodotto.save
+  end
+
+  test "non puo mancare il modello" do
+    @prodotto.modello = nil
+    assert !@prodotto.save
+  end
+
+  test "non puo mancare la unita" do
+    @prodotto.unita = nil
+    assert !@prodotto.save
+  end
 
 end

@@ -3,7 +3,8 @@ class Prodotto < ActiveRecord::Base
   belongs_to :modello
   belongs_to :unita
 
-  attr_accessible :codice, :composizione, :descrizione, :iva, :prezzo_conformato, :prezzo_unitario
+  attr_accessible :codice, :composizione, :descrizione, :iva, :prezzo_conformato, :prezzo_unitario, :campagna_id,
+                  :modello_id, :unita_id
 
   validates_numericality_of :codice, :only_integer => true, :greater_than => 0
   validates_length_of :descrizione, :maximum => 50, :minimum => 1, :allow_blank => false, :allow_nil => false
@@ -13,5 +14,9 @@ class Prodotto < ActiveRecord::Base
   validates_numericality_of :prezzo_conformato, :greater_than_or_equal_to => 0, :allow_blank => true, :allow_nil => true
   validates_uniqueness_of :codice
   validates_uniqueness_of :descrizione
+  validates_associated :campagna, :modello, :unita
+  validates_presence_of :campagna_id
+  validates_presence_of :modello_id
+  validates_presence_of :unita_id
 
 end
