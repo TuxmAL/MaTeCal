@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :campagna %><br />
-    <%= f.select('campagna_id', Campagna.all.collect {|p| [ p.descrizione, p.id ] }, { :selected => nil }) %>
+    <%= f.select('campagna_id', Campagna.all.collect {|p| [ p.descrizione, p.id ] }) %>
   </div>
   <div class="field">
     <%= f.label :codice %><br />
@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :modello %><br />
-    <%= f.select('modello_id', Modello.all.collect {|p| [ p.descrizione, p.id ] }, { :selected => nil }) %>
+    <%= f.select('modello_id', Modello.all.collect {|p| [ p.descrizione, p.id ] }) %>
   </div>
   <div class="field">
     <%= f.label :composizione %><br />
@@ -45,7 +45,7 @@
   </div>
   <div class="field">
     <%= f.label :unita, 'Unità di misura:' %><br />
-    <%= f.select('unita_id', Unita.all.collect {|p| [ p.unita, p.id ] }, { :selected => nil }) %>
+    <%= f.select('unita_id', Unita.all.collect {|p| [ p.unita, p.id ] }) %>
   </div>
   <div class="actions">
     <%= f.submit %>
