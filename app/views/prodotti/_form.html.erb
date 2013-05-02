@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :codice %><br />
-    <%= f.number_field :codice %>
+    <%= f.number_field :codice, :size => 8, :maxlength => 6, :placeholder => 'numero' %>
   </div>
   <div class="field">
     <%= f.label :descrizione %><br />
-    <%= f.text_field :descrizione %>
+    <%= f.text_field :descrizione, :size => 70, :maxlength => 50, :placeholder => 'nome del prodotto' %>
   </div>
   <div class="field">
     <%= f.label :modello %><br />
@@ -29,19 +29,19 @@
   </div>
   <div class="field">
     <%= f.label :composizione %><br />
-    <%= f.text_field :composizione %>
+    <%= f.text_area :composizione, :size => '55x2', :maxlength => 100, :placeholder => 'composizione del prodotto' %>
   </div>
   <div class="field">
     <%= f.label :prezzo_unitario %><br />
-    <%= f.text_field :prezzo_unitario %>
+    <%= f.text_field :prezzo_unitario, :size => 12, :maxlength => 11 %>
   </div>
   <div class="field">
     <%= f.label :prezzo_conformato %><br />
-    <%= f.text_field :prezzo_conformato %>
+    <%= f.text_field :prezzo_conformato, :size => 12, :maxlength => 11 %>
   </div>
   <div class="field">
     <%= f.label :iva %><br />
-    <%= f.number_field :iva %>
+    <%= f.number_field :iva , :in =>0..100, :step => 1, :size => 4, :maxlength => 3, :placeholder => 'iva'%>
   </div>
   <div class="field">
     <%= f.label :unita, 'Unità di misura:' %><br />
