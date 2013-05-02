@@ -60,6 +60,7 @@ SimpleNavigation::Configuration.run do |navigation|
       sub_nav.item :modello, 'Modelli', modelli_path, :highlights_on => :subpath
       sub_nav.item :prodotto, 'Prodotti', prodotti_path, :highlights_on => :subpath
       sub_nav.item :unita, 'Unità', unita_index_path, :highlights_on => :subpath
+      sub_nav.item :zona, 'Zone', zone_path, :highlights_on => :subpath
     end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
