@@ -1,0 +1,35 @@
+<h1>Elenco degli agenti</h1>
+
+<table>
+  <tr>
+    <th>Cognome</th>
+    <th>Nome</th>
+    <th>Zona</th>
+    <th>Citt&agrave;</th>
+    <th>Telefono</th>
+    <th>Fax</th>
+    <th>Codice fiscale<br/>Partita IVA</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @agenti.each do |agente| %>
+  <tr>
+    <td><%= agente.cognome %></td>
+    <td><%= agente.nome %></td>
+    <td><%= agente.zona.descrizione %></td>
+    <td><%= agente.citta %> (<%= agente.provincia %>)</td>
+    <td><%= agente.telefono1 %> - <%= agente.telefono2 %> - <%= agente.telefono3 %></td>
+    <td><%= agente.fax %></td>
+    <td><%= agente.codfis_piva %></td>
+    <td><%= link_to 'Mostra', agente %></td>
+    <td><%= link_to 'Modifica', edit_agente_path(agente) %></td>
+    <td><%= link_to 'Elimina', agente, method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuovo Agente', new_agente_path %>

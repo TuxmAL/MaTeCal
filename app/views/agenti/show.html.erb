@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cognome:</b>
+  <%= @agente.cognome %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @agente.nome %>
+</p>
+
+<p>
+  <b>Zona:</b>
+  <%= @agente.zona.descrizione %>
+</p>
+
+<p>
+  <b>Indirizzo:</b>
+  <%= @agente.via %>
+</p>
+
+<p>
+  <b>Citt&agrave;:</b>
+  <%= @agente.citta %>
+</p>
+
+<p>
+  <b>Provincia:</b>
+  <%= @agente.provincia %>
+</p>
+
+<p>
+  <b>Cap:</b>
+  <%= @agente.cap %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%= @agente.telefono1 %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%= @agente.telefono2 %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%= @agente.telefono3 %>
+</p>
+
+<p>
+  <b>Fax:</b>
+  <%= @agente.fax %>
+</p>
+
+<p>
+  <b>Codice fiscale o partita IVA:</b>
+  <%= @agente.codfis_piva %>
+</p>
+
+<p>
+  <b>Provvigione:</b>
+  <%= @agente.provvigione %>
+</p>
+
+
+<%= link_to 'Modifica', edit_agente_path(@agente) %> |
+<%= link_to 'Indietro', agenti_path %>

@@ -1,0 +1,70 @@
+<%= form_for(@agente) do |f| %>
+  <% if @agente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@agente.errors.count, "error") %> prohibited this agente from being saved:</h2>
+
+      <ul>
+      <% @agente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cognome %><br />
+    <%= f.text_field :cognome %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :zona %><br />
+    <%= f.select('zona_id', Zona.all.collect {|p| [ p.descrizione, p.id ] }) %>
+
+  </div>
+  <div class="field">
+    <%= f.label :via, 'Indirizzo' %><br />
+    <%= f.text_field :via %>
+  </div>
+  <div class="field">
+    <%= f.label :citta, 'Città' %><br />
+    <%= f.text_field :citta %>
+  </div>
+  <div class="field">
+    <%= f.label :provincia %><br />
+    <%= f.text_field :provincia %>
+  </div>
+  <div class="field">
+    <%= f.label :cap %><br />
+    <%= f.text_field :cap %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono1 %><br />
+    <%= f.text_field :telefono1 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono2 %><br />
+    <%= f.text_field :telefono2 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono3 %><br />
+    <%= f.text_field :telefono3 %>
+  </div>
+  <div class="field">
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label :codfis_piva, 'Codice fiscale o Partita IVA' %><br />
+    <%= f.text_field :codfis_piva %>
+  </div>
+  <div class="field">
+    <%= f.label :provvigione %><br />
+    <%= f.number_field :provvigione %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

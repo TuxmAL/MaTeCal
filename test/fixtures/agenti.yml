@@ -1,0 +1,30 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+#todo sono da compilare un paio di fixture per gli agenti.
+one:
+  cognome: MyString
+  nome: MyString
+  via: MyString
+  citta: MyString
+  provincia: MyString
+  cap: MyString
+  telefono1: MyString
+  telefono2: MyString
+  telefono3: MyString
+  fax: MyString
+  codfis_piva: MyString
+  provvigione: 1
+
+two:
+  cognome: MyString
+  nome: MyString
+  via: MyString
+  citta: MyString
+  provincia: MyString
+  cap: MyString
+  telefono1: MyString
+  telefono2: MyString
+  telefono3: MyString
+  fax: MyString
+  codfis_piva: MyString
+  provvigione: 1

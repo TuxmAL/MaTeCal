@@ -54,6 +54,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # Add an item which has a sub navigation (same params, but with block)
     primary.item :anag, 'Anagrafiche', :expand_all => true do |sub_nav|
       # Add an item to the sub navigation (same params again)
+      sub_nav.item :agente, 'Agenti', agenti_path, :highlights_on => :subpath
       sub_nav.item :campagna, 'Campagne', campagne_path, :highlights_on => :subpath
       sub_nav.item :causale, 'Causali', causali_path, :highlights_on => :subpath
       sub_nav.item :mod_pag, 'Modalità di pagamento', mod_pags_path, :highlights_on => :subpath
