@@ -12,6 +12,7 @@ one:
   telefono2: MyString
   telefono3: MyString
   fax: MyString
+  email: MyString
   codfis_piva: MyString
   provvigione: 1
 
@@ -26,5 +27,6 @@ two:
   telefono2: MyString
   telefono3: MyString
   fax: MyString
+  email: MyString
   codfis_piva: MyString
   provvigione: 1

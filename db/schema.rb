@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "telefono2",   :limit => 15
     t.string   "telefono3",   :limit => 15
     t.string   "fax",         :limit => 30
+    t.string   "email",       :limit => 30
     t.string   "codfis_piva", :limit => 15,                :null => false
     t.integer  "provvigione",               :default => 0, :null => false
     t.integer  "zona_id",                                  :null => false
@@ -86,6 +87,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "telefono2",       :limit => 15
     t.string   "telefono3",       :limit => 15
     t.string   "fax",             :limit => 30
+    t.string   "email",           :limit => 30
     t.string   "codfis_piva",     :limit => 16,  :null => false
     t.string   "banca",           :limit => 40,  :null => false
     t.string   "agenzia",         :limit => 120, :null => false
