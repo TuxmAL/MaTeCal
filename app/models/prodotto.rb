@@ -6,17 +6,20 @@ class Prodotto < ActiveRecord::Base
   attr_accessible :codice, :composizione, :descrizione, :iva, :prezzo_conformato, :prezzo_unitario, :campagna_id,
                   :modello_id, :unita_id
 
-  validates_numericality_of :codice, :only_integer => true, :greater_than => 0
-  validates_length_of :descrizione, :maximum => 50, :minimum => 1, :allow_blank => false, :allow_nil => false
-  validates_length_of :composizione, :maximum => 100, :allow_blank => true, :allow_nil => true
-  validates_numericality_of :iva, :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 100
-  validates_numericality_of :prezzo_unitario, :greater_than_or_equal_to => 0, :allow_blank => false, :allow_nil => false
-  validates_numericality_of :prezzo_conformato, :greater_than_or_equal_to => 0, :allow_blank => true, :allow_nil => true
-  validates_uniqueness_of :codice
-  validates_uniqueness_of :descrizione
-  validates_associated :campagna, :modello, :unita
-  validates_presence_of :campagna_id
-  validates_presence_of :modello_id
-  validates_presence_of :unita_id
+  validates :codice, :numericality => { :only_integer => true, :greater_than => 0 },
+            :uniqueness => true
+  validates :descrizione, :length => { :maximum => 50, :minimum => 1 },
+            :presence => true,
+            :uniqueness => true
+  validates :composizione, :length => { :maximum => 100 }
+  validates :iva, :numericality => { :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 100 },
+            :presence => true
+  validates :prezzo_unitario, :numericality => { :greater_than_or_equal_to => 0 },
+            :presence => true
+  validates :prezzo_conformato, :numericality => { :greater_than_or_equal_to => 0 },
+            :presence => true
+  validates :campagna_id, :presence => true
+  validates :modello_id, :presence => true
+  validates :unita_id, :presence => true
 
 end
