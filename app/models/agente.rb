@@ -6,8 +6,6 @@ class Agente < ActiveRecord::Base
 
   validates :cognome, :length => { :maximum => 30, :minimum => 1 },
             :presence => true
-  validates :cognome, :length => { :maximum => 30, :minimum => 1 },
-            :presence => true
   validates :nome, :length => { :maximum => 25, :minimum => 1 },
             :presence => true
   validates :via, :length => { :maximum => 40, :minimum => 1 },
@@ -18,15 +16,24 @@ class Agente < ActiveRecord::Base
             :presence => true
   validates :cap, :length => { :is => 5 },
             :presence => true
-  validates :telefono1, :length => { :maximum => 15, :minimum => 3 }
-  validates :telefono2, :length => { :maximum => 15, :minimum => 3 }
-  validates :telefono3, :length => { :maximum => 15, :minimum => 3 }
-  validates :fax, :length => { :maximum => 30, :minimum => 3 }
-  validates :email, :length => { :maximum => 30, :minimum => 6 }
-  #validates :email, :presence => false, :email => true
+  validates :telefono1, :length => { :maximum => 15, :minimum => 3 },
+            :allow_nil => true,
+            :allow_blank => true
+  validates :telefono2, :length => { :maximum => 15, :minimum => 3 },
+            :allow_nil => true,
+            :allow_blank => true
+  validates :telefono3, :length => { :maximum => 15, :minimum => 3 },
+            :allow_nil => true,
+            :allow_blank => true
+  validates :fax, :length => { :maximum => 30, :minimum => 3 },
+            :allow_nil => true,
+            :allow_blank => true
+  validates :email, :email => true,
+            :allow_nil => true,
+            :allow_blank => true
   validates :codfis_piva, :length => { :maximum => 15, :minimum => 11 },
             :presence => true
   validates :zona_id, :presence => true
 
-  #todo inserire i controlli sull'email e sul checksum della partita iva / codice fiscale.
+  #todo inserire il controllo sul checksum della partita iva / codice fiscale.
 end

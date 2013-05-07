@@ -1,32 +1,32 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-#todo sono da compilare un paio di fixture per gli agenti.
-one:
-  cognome: MyString
-  nome: MyString
-  via: MyString
-  citta: MyString
-  provincia: MyString
-  cap: MyString
-  telefono1: MyString
-  telefono2: MyString
-  telefono3: MyString
-  fax: MyString
-  email: MyString
-  codfis_piva: MyString
-  provvigione: 1
+esposito:
+  cognome: Esposito
+  nome: Gennaro
+  via: da questa strada, 21/B
+  citta: Napoli
+  provincia: NA
+  cap: 80100
+  telefono1: 081818181
+  telefono2: 3202020202
+  fax: 08108080808
+  email: gennaro.esposito@provider.pr
+  codfis_piva: 12312312345
+  provvigione: 5
+  zona: napoli
 
-two:
-  cognome: MyString
-  nome: MyString
-  via: MyString
-  citta: MyString
-  provincia: MyString
-  cap: MyString
-  telefono1: MyString
-  telefono2: MyString
-  telefono3: MyString
-  fax: MyString
-  email: MyString
-  codfis_piva: MyString
-  provvigione: 1
+russo:
+  cognome: Russo
+  nome: Vincenzo
+  via: dalla strada, 234
+  citta: S. Giovanni a Teduccio
+  provincia: NA
+  cap: 80100
+  telefono1: 0812244556
+  telefono2: 0808765432
+  telefono3: 0810001110
+  fax: 0819875674
+  email: enzoesposito@vendo.tutto.it
+  codfis_piva: SPTNCN71H19F839K
+  provvigione: 7
+  zona: campania
