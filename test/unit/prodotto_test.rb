@@ -14,13 +14,23 @@ class ProdottoTest < ActiveSupport::TestCase
     assert !Prodotto.new.save
   end
 
-  test "il codice non puo essere vuoto" do
+  test "il codice non puo essere mancante" do
     @prodotto.codice = nil
     assert !@prodotto.save
   end
 
-  test "la descrizione non puo essere vuota" do
+  test "il codice non puo essere vuoto" do
+    @prodotto.codice = ''
+    assert !@prodotto.save
+  end
+
+  test "la descrizione non puo essere mancante" do
     @prodotto.descrizione = ''
+    assert !@prodotto.save
+  end
+
+  test "la descrizione non puo essere vuota" do
+    @prodotto.descrizione = nil
     assert !@prodotto.save
   end
 
