@@ -82,4 +82,9 @@ class ProdottoTest < ActiveSupport::TestCase
     assert !@prodotto.save
   end
 
+  test "il prezzo conformato puo mancare" do
+    @prodotto.prezzo_conformato = nil
+    assert @prodotto.save
+  end
+
 end

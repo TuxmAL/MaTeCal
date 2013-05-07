@@ -16,8 +16,7 @@ class Prodotto < ActiveRecord::Base
             :presence => true
   validates :prezzo_unitario, :numericality => { :greater_than_or_equal_to => 0 },
             :presence => true
-  validates :prezzo_conformato, :numericality => { :greater_than_or_equal_to => 0 },
-            :presence => true
+  validates :prezzo_conformato, :numericality => { :greater_than_or_equal_to => 0 }, :allow_nil => true
   validates :campagna_id, :presence => true
   validates :modello_id, :presence => true
   validates :unita_id, :presence => true
