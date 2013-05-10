@@ -1,0 +1,8 @@
+L'algoritmo impiegato per calcolare la cifra di controllo è la Formula di Luhn:
+
+    Sia X la somma delle prime cinque cifre in posizione dispari
+    Sia Y il doppio della somma delle cinque cifre in posizione pari
+    Sia Z il numero di cifre, in posizione pari, maggiori o uguali a 5
+    Sia T=(X+Y+Z) mod 10 l'unità corrispondente alla somma dei numeri sopra calcolati
+    Allora la cifra di controllo C = (10-T) mod 10
+ 
