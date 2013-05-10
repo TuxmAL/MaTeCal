@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'mail'
 # vedi http://my.rails-royce.org/2010/07/21/email-validation-in-ruby-on-rails-without-regexp/
 # ed in particolare: https://gist.github.com/1188367

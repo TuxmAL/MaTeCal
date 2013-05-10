@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Agente < ActiveRecord::Base
   belongs_to :zona
 
