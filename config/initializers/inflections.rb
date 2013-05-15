@@ -11,6 +11,7 @@
    inflect.singular /^(.*)i$/i, '\1o'
    inflect.plural /^(.*)a$/i, '\1e'
    inflect.singular /^(.*)e$/i, '\1a'
+   inflect.irregular 'cliente', 'clienti'
    inflect.irregular 'agente', 'agenti'
    inflect.irregular 'causale', 'causali'
    inflect.irregular 'mod_pag', 'mod_pags'

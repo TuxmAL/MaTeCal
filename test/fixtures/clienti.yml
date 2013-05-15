@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ragione_sociale: MyString
+  via: MyString
+  citta: MyString
+  provincia: MyString
+  cap: MyString
+  telefono1: MyString
+  telefono2: MyString
+  telefono3: MyString
+  fax: MyString
+  email: MyString
+  codfis_piva: MyString
+  banca: MyString
+  agenzia: MyString
+  iban: MyString
+  note: MyText
+
+two:
+  ragione_sociale: MyString
+  via: MyString
+  citta: MyString
+  provincia: MyString
+  cap: MyString
+  telefono1: MyString
+  telefono2: MyString
+  telefono3: MyString
+  fax: MyString
+  email: MyString
+  codfis_piva: MyString
+  banca: MyString
+  agenzia: MyString
+  iban: MyString
+  note: MyText

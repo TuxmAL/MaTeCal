@@ -1,5 +1,7 @@
 # encoding: utf-8
 MaTeCal::Application.routes.draw do
+  resources :clienti
+
   resources :agenti
 
   resources :prodotti
