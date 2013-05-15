@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "codfis_piva",     :limit => 16,  :null => false
     t.string   "banca",           :limit => 40,  :null => false
     t.string   "agenzia",         :limit => 120, :null => false
-    t.string   "iban",            :limit => 27,  :null => false
+    t.string   "iban",            :limit => 34,  :null => false
     t.integer  "mod_pag_id",                     :null => false
     t.text     "note"
     t.datetime "created_at"

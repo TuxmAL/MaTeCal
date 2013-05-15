@@ -82,7 +82,7 @@ CREATE TABLE `clienti` (
   `codfis_piva` varchar(16) NOT NULL,
   `banca` varchar(40) NOT NULL,
   `agenzia` varchar(120) NOT NULL,
-  `iban` varchar(27) NOT NULL,
+  `iban` varchar(34) NOT NULL,
   `mod_pag_id` int(11) NOT NULL,
   `note` text,
   `created_at` datetime DEFAULT NULL,
@@ -280,9 +280,9 @@ CREATE TABLE `prodotti` (
   KEY `fk_prodotti_modelli1_idx` (`modello_id`),
   KEY `fk_prodotti_unita1_idx` (`unita_id`),
   KEY `fk_prodotti_campagne1_idx` (`campagna_id`),
+  CONSTRAINT `fk_prodotti_campagne1` FOREIGN KEY (`campagna_id`) REFERENCES `campagne` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_prodotti_modelli1` FOREIGN KEY (`modello_id`) REFERENCES `modelli` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_prodotti_unita1` FOREIGN KEY (`unita_id`) REFERENCES `unita` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_prodotti_campagne1` FOREIGN KEY (`campagna_id`) REFERENCES `campagne` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_prodotti_unita1` FOREIGN KEY (`unita_id`) REFERENCES `unita` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `schema_migrations` (
