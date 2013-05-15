@@ -29,7 +29,7 @@ class Agente < ActiveRecord::Base
   validates :fax, :length => { :maximum => 30, :minimum => 3 },
             :allow_nil => true,
             :allow_blank => true
-  validates :email, :email => true,
+  validates :email, :email => true,  :length => { :maximum => 30 },
             :allow_nil => true,
             :allow_blank => true
   validates :codfis_piva, :length => { :maximum => 15, :minimum => 11 },
