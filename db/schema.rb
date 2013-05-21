@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "telefono3",   :limit => 15
     t.string   "fax",         :limit => 30
     t.string   "email",       :limit => 30
-    t.string   "codfis_piva", :limit => 15,                :null => false
+    t.string   "codfis_piva", :limit => 16,                :null => false
     t.integer  "provvigione",               :default => 0, :null => false
     t.integer  "zona_id",                                  :null => false
     t.datetime "created_at"
