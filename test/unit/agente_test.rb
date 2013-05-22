@@ -2,7 +2,6 @@
 require 'test_helper'
 
 class AgenteTest < ActiveSupport::TestCase
-  #todo inserire test per controllo della partita iva / codice fiscale.
 
   def setup
     @agente = agenti(:esposito)
@@ -188,4 +187,6 @@ class AgenteTest < ActiveSupport::TestCase
     assert !@agente.save
     #assert_match /blank/, thing.errors[:partita_iva]
   end
+  #todo inserire test per controllo del codice fiscale.
+
 end
