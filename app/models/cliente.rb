@@ -16,22 +16,13 @@ class Cliente < ActiveRecord::Base
             :presence => true
   validates :cap, :length => { :is => 5 },
             :presence => true
-  validates :telefono1, :length => { :maximum => 15, :minimum => 3 },
-            :allow_nil => true,
-            :allow_blank => true
-  validates :telefono2, :length => { :maximum => 15, :minimum => 3 },
-            :allow_nil => true,
-            :allow_blank => true
-  validates :telefono3, :length => { :maximum => 15, :minimum => 3 },
-            :allow_nil => true,
-            :allow_blank => true
-  validates :fax, :length => { :maximum => 30, :minimum => 3 },
-            :allow_nil => true,
-            :allow_blank => true
-  validates :email, :email => true, :length => { :maximum => 30 },
-            :allow_nil => true,
-            :allow_blank => true
-  validates :codfis_piva, :length => { :maximum => 15, :minimum => 11 },
+  validates :telefono1, :length => { :maximum => 15 }
+  validates :telefono2, :length => { :maximum => 15 }
+  validates :telefono3, :length => { :maximum => 15 }
+  validates :fax, :length => { :maximum => 30 }
+  validates :email, :email => true,  :length => { :maximum => 30 },
+            :allow_nil => true, :allow_blank => true
+  validates :codfis_piva, :piva_codfis => true, :length => { :maximum => 16, :minimum => 11 },
             :presence => true
   validates :banca, :length => { :maximum => 40, :minimum => 1 },
             :presence => true
@@ -39,9 +30,6 @@ class Cliente < ActiveRecord::Base
             :presence => true
   validates :iban, :iban => true, :length => { :maximum => 37 },
             :presence => true
-
   validates :zona_id, :presence => true
   validates :mod_pag_id, :presence => true
-
-  #todo inserire il controllo sul checksum della partita iva / codice fiscale.
 end
