@@ -19,7 +19,7 @@ class PivaCodfisValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     return if options[:allow_nil] && value.nil?
     return if options[:allow_blank] && value.blank?
-
+    return record.errors.add(attribute, :invalid) if value.blank?
     if value.length == 11 && !!(value =~ /^\d+$/)
       message = valida_piva value
       record.errors.add(:partita_iva, message) unless message.nil?
