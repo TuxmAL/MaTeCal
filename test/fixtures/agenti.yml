@@ -9,9 +9,10 @@ esposito:
   cap: 80100
   telefono1: 081818181
   telefono2: 3202020202
+  telefono3: 11102020202
   fax: 08108080808
   email: gennaro.esposito@provider.pr
-  codfis_piva: 12312312345
+  codfis_piva: 02044190615
   provvigione: 5
   zona: napoli
 
@@ -26,7 +27,7 @@ russo:
   telefono2: 0808765432
   telefono3: 0810001110
   fax: 0819875674
-  email: enzoesposito@vendo.tutto.it
-  codfis_piva: SPTNCN71H19F839K
+  email: enzo_esposito@vendo.tutto.it
+  codfis_piva: SPTNCN71H19F839V
   provvigione: 7
   zona: campania
