@@ -122,6 +122,16 @@ class AgenteTest < ActiveSupport::TestCase
     assert @agente.save
   end
 
+  test "email non valida" do
+    @agente.email = 'pippo@.it'
+    assert !@agente.save
+  end
+
+  test "email valida" do
+    @agente.email = 'pippo.de_pippis@pluto.it'
+    assert @agente.save
+  end
+
   test "fax mancante valida" do
     @agente.fax = nil
     assert @agente.save
@@ -155,4 +165,27 @@ class AgenteTest < ActiveSupport::TestCase
     assert !@agente.save
   end
 
+  test "piva troppo lunga" do
+    @agente.codfis_piva = '12345678901112'
+    assert !@agente.save
+    #assert_match /blank/, thing.errors[:partita_iva]
+  end
+
+  test "piva troppo corta" do
+    @agente.codfis_piva = '1234567'
+    assert !@agente.save
+    #assert_match /blank/, @agente..errors[:partita_iva]
+  end
+
+  test "piva non numerica" do
+    @agente.codfis_piva = 'abc1234567z'
+    assert !@agente.save
+    #assert_match /blank/, thing.errors[:partita_iva]
+  end
+
+  test "piva checksum scorretto" do
+    @agente.codfis_piva = '12345678901'
+    assert !@agente.save
+    #assert_match /blank/, thing.errors[:partita_iva]
+  end
 end
