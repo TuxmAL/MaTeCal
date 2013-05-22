@@ -26,6 +26,4 @@ class Agente < ActiveRecord::Base
   validates :codfis_piva, :piva_codfis => true, :length => { :maximum => 16, :minimum => 11 },
             :presence => true
   validates :zona_id, :presence => true
-
-  #todo inserire il controllo sul checksum della partita iva / codice fiscale.
 end
