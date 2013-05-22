@@ -1,14 +1,17 @@
 # encoding: utf-8
-require 'mail'
 # vedi http://my.rails-royce.org/2010/07/21/email-validation-in-ruby-on-rails-without-regexp/
 # ed in particolare: https://gist.github.com/1188367
-#
+
+require 'mail'
+
 class EmailValidator < ActiveModel::EachValidator
   attr_reader :record, :attribute, :value, :email, :tree
 
   def validate_each(record, attribute, value)
     @record, @attribute, @value = record, attribute, value
 
+    return if options[:allow_nil] && value.nil?
+    return if options[:allow_blank] && value.blank?
     @email = Mail::Address.new(value)
     @tree = email.__send__(:tree)
 

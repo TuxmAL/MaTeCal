@@ -17,6 +17,9 @@
 class IbanValidator < ActiveModel::EachValidator
 
   def validate_each(record, attribute, value)
+    return if options[:allow_nil] && value.nil?
+    return if options[:allow_blank] && value.blank?
+
     record.errors.add(attribute, :invalid) unless check_iban(value)
   end
 
@@ -40,7 +43,7 @@ private
 
   def iso7064mod97_10(iban)
     iban.upcase
-      .split(//)
+      .split('')
       .rotate(4)
       .map { |i| (i.match /\D/) ? (i.ord - 55).to_s : i }
       .join
