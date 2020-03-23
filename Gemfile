@@ -5,8 +5,10 @@ gem 'rails-i18n'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
+#security issues
 gem "rack", ">= 1.6.12"
+gem "sprockets", ">= 2.12.5"
+
 
 gem 'mysql2'
 gem 'will_paginate'
