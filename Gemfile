@@ -5,6 +5,9 @@ gem 'rails-i18n'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+
+gem "rack", ">= 1.6.12"
+
 gem 'mysql2'
 gem 'will_paginate'
 gem 'simple-navigation'
